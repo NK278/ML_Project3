@@ -70,9 +70,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="login">
         <h1>Breast Cancer Predictor</h1>
-        <form action="/predict" method="POST">
+        <form action="{{ url_for('form')}}" method="POST">
             <label for="mean_radius">Mean Radius
                 <span class="tooltip">The mean of distances from center to points on the perimeter.</span>
             </label>
@@ -223,7 +223,7 @@
             </label>
             <input type="number" step="any" id="worst_fractal_dimension" name="worst_fractal_dimension" required>
 
-            <a href="{{ url_for('result') }}" class="btn">Predict</a>
+            <button type="submit">Predict</button>
     </div>
 </body>
 </html>
