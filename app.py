@@ -9,9 +9,7 @@ def index():
 
 @app.route('/predict',methods=['GET','POST'])
 def form():
-    if request.method=='GET':
-        return render_template('form.html')
-    else:
+    if request.method=='POST':
         data=CustomData(
             mean_radius= float(request.form['mean_radius']),
             mean_texture= float(request.form['mean_texture']),
@@ -47,7 +45,9 @@ def form():
         df=data.get_data_as_dataframe()
         pred_pipe=PredictPipeline()
         pred=pred_pipe.predict(df)
-        return render_template('result.html', prediction=pred)
+        final_result = 'Malignant' if pred[0] == 1 else 'Benign'
+        return render_template('result.html',result=final_result)
+    else: return render_template('form.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
