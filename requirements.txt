@@ -2,5 +2,6 @@ Flask
 pymongo==4.2.0
 seaborn
 ydata-profiling
+scikit-learn
 gunicorn
 -e .
