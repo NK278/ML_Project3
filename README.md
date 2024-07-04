@@ -121,6 +121,26 @@ ML_Project3/
 - **Model Training**: The `model_train.ipynb` notebook and `model_trainer.py` module are used for training the model.
 - **Prediction**: The `prediction_pipeline.py` is used for making predictions with the trained model.
 - **Web Application**: The web application allows users to input data and get predictions. It can be started by running `app.py`.
+  
+## Deployment
+
+The project has been deployed and can be accessed at [https://ml-project3.onrender.com](https://ml-project3.onrender.com).
+
+## Docker
+
+ **Build and Run**
+- To build and run the Docker container:
+   ```bash
+   docker build -t ml_project3 
+   ```
+
+
+- Build the Docker image:
+  ```bash
+   docker run -p 5000:5000 ml_project3
+   ```
+
+
 
 ## License
 
